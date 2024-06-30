@@ -4,24 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        .container{
-            display: grid;
-            grid-template-columns: 100px auto 100px;
-            grid-template-rows: 50px 50px;
-            grid-gap: 3px;
-        }
-    </style>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () =>{
+
+            document.querySelector('form').onsubmit = () => {
+                const task = document.querySelector('.task').value;
+                if (task.length > 0){
+                    const li = document.createElement('li');
+                    li.innerHTML = task;
+                    document.querySelector(".display").append(li)
+                    document.querySelector(".task").value = "";
+                }
+                return false
+            }
+        });
+    </script>
 </head>
 <body>
     <div class= "container">
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-        <div>4</div>
-        <div>5</div>
-        <div>6</div>
+        <h1 >Tasks</h1>
+        <ul class="display">
+        </ul>
+        <form>
+            <input class="task" type="text">
+            <input class="submit" type="submit">
+        </form>
     </div>
 </body>
 </html>
