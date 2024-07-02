@@ -4,32 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!-- <link rel="stylesheet" href="style.css"> -->
     <script>
-        document.addEventListener("DOMContentLoaded", () =>{
+        let quantity = 0
+        document.addEventListener("DOMContentLoaded", loadPage);
 
-            document.querySelector('form').onsubmit = () => {
-                const task = document.querySelector('.task').value;
-                if (task.length > 0){
-                    const li = document.createElement('li');
-                    li.innerHTML = task;
-                    document.querySelector(".display").append(li)
-                    document.querySelector(".task").value = "";
+        function loadPage(){
+            document.querySelectorAll("button").forEach(button => {
+                button.onclick = function(){
+                let name = button.dataset.usage; 
+                if (name === "showQuantity"){
+                    console.log(quantity);
                 }
-                return false
+                else if (name === "adding"){
+                    quantity += 1;
+                    console.log(quantity);
+                }
+                else if (name === "incby2"){
+                    quantity += 2;
+                    console.log(quantity);
+                }
+                else if (name === "incby3"){
+                    quantity += 3;
+                    console.log(quantity);
+                    
+                }
+                else if (name === "resetCart"){
+                    quantity = 0
+                    console.log(quantity);
+                    
+                }
             }
-        });
+            });
+        
+
+        }
     </script>
+    
 </head>
 <body>
-    <div class= "container">
-        <h1 >Tasks</h1>
-        <ul class="display">
-        </ul>
-        <form>
-            <input class="task" type="text">
-            <input class="submit" type="submit">
-        </form>
-    </div>
+    <h2>Cart Quantity</h2>
+    <button data-usage = "showQuantity">Show Quantity</button>
+    <button data-usage = "adding">Add to Cart</button>
+    <button data-usage = "incby2">+ 2</button>
+    <button data-usage = "incby3">+ 3</button>
+    <button data-usage = "resetCart">Reset Cart</button>
+    
 </body>
 </html>
