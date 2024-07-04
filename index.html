@@ -3,50 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script>
-        let quantity = 0
-        document.addEventListener("DOMContentLoaded", loadPage);
-
-        function loadPage(){
-            document.querySelectorAll("button").forEach(button => {
-                button.onclick = function(){
-                let name = button.dataset.usage; 
-                if (name === "showQuantity"){
-                    console.log(quantity);
-                }
-                else if (name === "adding"){
-                    quantity += 1;
-                    console.log(quantity);
-                }
-                else if (name === "incby2"){
-                    quantity += 2;
-                    console.log(quantity);
-                }
-                else if (name === "incby3"){
-                    quantity += 3;
-                    console.log(quantity);
-                    
-                }
-                else if (name === "resetCart"){
-                    quantity = 0
-                    console.log(quantity);
-                    
-                }
-            }
-            }); //this code contains a lot of if else make it better next time
+    <title>Html and css</title>
+    <style>
+        .b1{
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            height: 36px;
+            width: 100px;
+            margin-right: 10px;
     
+            cursor: pointer;
         }
-    </script>
-    
+        .b2 {
+            background-color: white;
+            color:hsla(212, 63%, 55%, 0.913);
+            border-color:hsla(212, 63%, 55%, 0.913); 
+            border-radius: 2px;
+            border-style: solid;
+            border-width: 1.4px;
+            height: 36px;
+            width: 60px;
+            margin-right: 10px;
+            cursor: pointer;
+
+        }
+        .b3 {
+            padding: 10px 15px;
+            color: rgb(246, 246, 246);
+            background-color: hsla(212, 63%, 55%, 0.913);
+            border-radius: 18px;
+            border: none;
+            height: 36px;
+            width: 80px;
+            cursor: pointer;
+
+        }
+
+    </style>
+
 </head>
 <body>
-    <h2>Cart Quantity</h2>
-    <button data-usage = "showQuantity">Show Quantity</button>
-    <button data-usage = "adding">Add to Cart</button>
-    <button data-usage = "incby2">+ 2</button>
-    <button data-usage = "incby3">+ 3</button>
-    <button data-usage = "resetCart">Reset Cart</button>
+    <h2>practice one</h2>
+    <button class="b1">subscribe</button>
+    <button class="b2">join</button>
+    <button class="b3">tweet</button>
+
     
 </body>
 </html>
