@@ -54,8 +54,8 @@ document.addEventListener("DOMContentLoaded", pageLoaded);
                 } else{
                     console.log(`User choice: ${userChoice}`);
                     let result = decideWinner(computerChoice, userChoice);
-                    console.log(result);
-                    console.log(score)
+                    alert(`${result}
+                    won: ${score.wins} losses:${score.losses} ties:${score.ties}`);
                 }
             }
         })
