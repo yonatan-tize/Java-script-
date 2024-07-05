@@ -4,96 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Html and css</title>
-    <style>
-        .b1{
-            background-color: red;
-            color: white;
-            border: none;
-            border-radius: 3px;
-            padding: 10px 16px;
-            margin: 10px;
-            cursor: pointer;
-        }
-        .b2 {
-            background-color: white;
-            color:hsla(212, 63%, 55%, 0.913);
-            border-color:hsla(212, 63%, 55%, 0.913); 
-            border-radius: 2px;
-            border-style: solid;
-            border-width: 1.4px;
-            padding: 9px 16px;
-            margin: 10px;
-            cursor: pointer;
-        }
-        .b3 {
-            padding: 10px 15px;
-            color: rgb(246, 246, 246);
-            background-color: hsla(212, 63%, 55%, 0.913);
-            border: none;
-            cursor: pointer;
-            padding: 10px 16px;
-            margin: 10px;
-        }
-
-    </style>
-    <script>
-        document.addEventListener("DOMContentLoaded", pageLoaded);
-
-        function pageLoaded(){
-            // a function that will generate the computer choice
-            function computerSelect() {
-                let num = Math.random();
-                if (num < 1/3) {
-                    return "scissors";
-                } else if (num < 2/3) {
-                    return "paper";
-                } else {
-                    return "rock";
-                }
-            }
-
-            // a function that will compare the result of the user with that of the computer
-            function decideWinner(computerChoice, userChoice) {
-                if (
-                    (computerChoice === "scissors" && userChoice === "rock") ||
-                    (computerChoice === "paper" && userChoice === "scissors") ||
-                    (computerChoice === "rock" && userChoice === "paper")
-                ) {
-                    return `You won! The computer chose ${computerChoice}.`;
-                } 
-                else if (
-                    (userChoice === "scissors" && computerChoice === "rock") ||
-                    (userChoice === "paper" && computerChoice === "scissors") ||
-                    (userChoice === "rock" && computerChoice === "paper")
-                ) {
-                    return `You lost! The computer chose ${computerChoice}.`;
-                } 
-                else {
-                    return `It's a draw! The computer chose ${computerChoice}.`;
-                }
-            }
-
-
-            document.querySelectorAll("button").forEach(button => {
-                button.onclick = function(){
-                    let computerChoice = computerSelect();
-                    let userChoice = button.dataset.userinput;
-                    console.log(`User choice: ${userChoice}`);
-                    let result = decideWinner(computerChoice, userChoice);
-                    console.log(result);
-
-                }
-            })
-        }
-    </script>
-
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
 </head>
 <body>
     <h2>Let's play game.</h2>
     <button data-userinput="rock" class="b1">ROCK</button>
     <button data-userinput="paper" class="b2">PAPER</button>
     <button data-userinput="scissors" class="b3">SCISSORS</button>
+    <button data-userinput="resetScore" class="b4">Reset Score</button>
 
-    
 </body>
 </html>
