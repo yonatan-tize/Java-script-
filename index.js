@@ -51,11 +51,15 @@ document.addEventListener("DOMContentLoaded", pageLoaded);
                     score.losses = 0;
                     score.ties = 0;
                     score.wins = 0;
+                    document.querySelector('.situation').innerHTML = "";
+                    document.querySelector(".result-display").innerHTML = 
+                    `won: ${score.wins} losses:${score.losses} ties:${score.ties}`;
                 } else{
                     console.log(`User choice: ${userChoice}`);
                     let result = decideWinner(computerChoice, userChoice);
-                    alert(`${result}
-                    won: ${score.wins} losses:${score.losses} ties:${score.ties}`);
+                    document.querySelector('.situation').innerHTML = result;
+                    document.querySelector(".result-display").innerHTML = 
+                    `won: ${score.wins} losses:${score.losses} ties:${score.ties}`;
                 }
             }
         })
